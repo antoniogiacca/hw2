@@ -12,7 +12,7 @@ function search(event){
 
 const form = document.querySelector('form#ricercaN');
 form.addEventListener('submit', search);
-  
+
 
 function onResponse(resp){
     console.log(resp);

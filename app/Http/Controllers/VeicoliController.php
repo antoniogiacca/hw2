@@ -12,7 +12,7 @@ class VeicoliController extends Controller{
 
     public function index(){
         $user = User::find(session('user_id'));
-         return view('veicoli')->with('csrf_token', csrf_token())->with("user", $user);
+        return view('veicoli')->with('csrf_token', csrf_token())->with("user", $user);
     }
 
 
@@ -85,8 +85,8 @@ class VeicoliController extends Controller{
 
 public function newC(){
     $data=request();
-    if(isset($data['titolo']) && isset($data['prezzo']) && 
-    isset($data['descrizione']) && 
+    if(isset($data['titolo']) && isset($data['prezzo']) &&
+    isset($data['descrizione']) &&
     isset($data['immagine'])){
         $newVeicoli=Veicoli::create([
         'titolo' => $data['titolo'],
@@ -113,7 +113,7 @@ public function remC(){
 
 public function news($query){
 
-    $rest_url='https://newsapi.org/v2/everything?q=';
+    $rest_url='https://newsapi.org/v2/everything?';
 
     $json=Http::get($rest_url,[
         'q' => $query,

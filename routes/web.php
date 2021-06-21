@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get("/home", "App\Http\Controllers\HomeController@home")->name("home");
+Route::get("/maps","App\Http\Controllers\HomeController@maps")->name('maps');
 
 Route::get("/signup", "App\Http\Controllers\SignupController@signup")->name("signup");
 Route::post("/signup","App\Http\Controllers\SignupController@carica");
@@ -41,4 +42,3 @@ Route::post("/remC","App\Http\Controllers\VeicoliController@remC")->name('remC')
 
 
 Route::get("/news/{q?}","App\Http\Controllers\VeicoliController@news")->name('news');
-Route::get("/maps","App\Http\Controllers\HomeController@maps")->name('maps');
