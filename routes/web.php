@@ -39,6 +39,4 @@ Route::get("/pref","App\Http\Controllers\VeicoliController@veicoliPreferiti")->n
 Route::get("/cont","App\Http\Controllers\VeicoliController@cont")->name('cont');
 Route::post("/newC","App\Http\Controllers\VeicoliController@newC")->name('newC');
 Route::post("/remC","App\Http\Controllers\VeicoliController@remC")->name('remC');
-
-
 Route::get("/news/{q?}","App\Http\Controllers\VeicoliController@news")->name('news');

@@ -165,7 +165,7 @@ function remPreferiti(event){
         method:'post',
         body:rimuovi,
         headers:{'X-CSRF-TOKEN':CSFR_TOKEN}
-    }).then(onText1);
+    }).then(onResponsePost).then(onText1);
 
 }
 
@@ -228,6 +228,7 @@ function RicercaJson(json){
     }
    
 }
+
 
 
 const bottoneNew=document.querySelector("#newC.button");

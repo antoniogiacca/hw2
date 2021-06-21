@@ -19,21 +19,7 @@ function controllo(event){
     }
 }
 
-function onJson(json){
-    console.log(json);
-    if(json.exists==true){
-        alert("Username già utilizzato, cambiarlo.");
-        console.log(form.try);
-        form.try.disable=true;
-    }else{
-        form.try.disable=false;
-    }
-}
 
-function onResponse(res){
-    if (!res.ok) return null;
-    return res.json();
-}
 
 function controllo_username(event){
     console.log(usr.value);
@@ -46,9 +32,16 @@ function controllo_username(event){
     }).then(onResponse).then(jsonUser);
 }
 
+
+function onResponse(res){
+    if (!res.ok) return null;
+    return res.json();
+}
+
+
 function jsonUser(json){
     if(json.exists==true){
-        alert("Username gia preso, scegline un altro");
+        alert("Username già utilizzato, cambiarlo.");
         console.log(form.try);
         form.try.disable=true;
     }else{
